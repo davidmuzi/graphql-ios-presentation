@@ -29,3 +29,22 @@ $APOLLO_FRAMEWORK_PATH/check-and-run-apollo-codegen.sh generate $(find . -name '
 [Downloading a schema](http://dev.apollodata.com/ios/downloading-schema.html)
 1. `apollo-codegen download-schema https://api.github.com/graphql --output schema.json --header "Authorization: Bearer <token>"`
 2. Build to generate `API.swift`, link to target
+
+# Creating Queries
+1. Use [GraphiQL](https://developer.github.com/early-access/graphql/explorer/) to create query
+```
+query PublicRepos {
+    viewer {
+        login
+        repositories(first: 10, privacy: PUBLIC) {
+            edges {
+                node {
+                    id
+                    name
+                }
+            }
+        }
+    }
+}
+```
+2. Build, take a look at `API.swift`

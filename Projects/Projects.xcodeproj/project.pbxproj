@@ -15,6 +15,7 @@
 		BEA8DD7C1E6CA8F6009096BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEA8DD7A1E6CA8F6009096BD /* LaunchScreen.storyboard */; };
 		BEA8DD841E6CA92C009096BD /* Apollo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEA8DD831E6CA92C009096BD /* Apollo.framework */; };
 		BEA8DD881E6CAA05009096BD /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA8DD871E6CAA05009096BD /* API.swift */; };
+		BEA8DD8C1E6CABCC009096BD /* repos.graphql in Resources */ = {isa = PBXBuildFile; fileRef = BEA8DD8B1E6CABCC009096BD /* repos.graphql */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		BEA8DD7D1E6CA8F6009096BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BEA8DD831E6CA92C009096BD /* Apollo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Apollo.framework; path = Carthage/Build/iOS/Apollo.framework; sourceTree = "<group>"; };
 		BEA8DD871E6CAA05009096BD /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = API.swift; path = Projects/API.swift; sourceTree = "<group>"; };
+		BEA8DD8B1E6CABCC009096BD /* repos.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = repos.graphql; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 		BEA8DD6E1E6CA8F6009096BD /* Projects */ = {
 			isa = PBXGroup;
 			children = (
+				BEA8DD8A1E6CABB2009096BD /* Queries */,
 				BEA8DD6F1E6CA8F6009096BD /* AppDelegate.swift */,
 				BEA8DD711E6CA8F6009096BD /* MasterViewController.swift */,
 				BEA8DD731E6CA8F6009096BD /* DetailViewController.swift */,
@@ -80,6 +83,14 @@
 				BEA8DD831E6CA92C009096BD /* Apollo.framework */,
 			);
 			name = Apollo;
+			sourceTree = "<group>";
+		};
+		BEA8DD8A1E6CABB2009096BD /* Queries */ = {
+			isa = PBXGroup;
+			children = (
+				BEA8DD8B1E6CABCC009096BD /* repos.graphql */,
+			);
+			name = Queries;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,6 +158,7 @@
 				BEA8DD7C1E6CA8F6009096BD /* LaunchScreen.storyboard in Resources */,
 				BEA8DD791E6CA8F6009096BD /* Assets.xcassets in Resources */,
 				BEA8DD771E6CA8F6009096BD /* Main.storyboard in Resources */,
+				BEA8DD8C1E6CABCC009096BD /* repos.graphql in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
