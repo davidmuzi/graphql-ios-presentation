@@ -11,8 +11,6 @@ import Apollo
 
 class MasterViewController: UITableViewController {
 
-    var detailViewController: DetailViewController? = nil
-
     var repos: [PublicReposQuery.Data.Viewer.Repository.Edge]? {
         didSet {
             tableView.reloadData()
@@ -24,6 +22,7 @@ class MasterViewController: UITableViewController {
 
         let token = ProcessInfo.processInfo.environment["TOKEN"]!
         configuration.httpAdditionalHeaders = ["Authorization": "Bearer \(token)"]
+        configuration.requestCachePolicy = .reloadIgnoringLocalCacheData // Create a ticket on Apollo for this
         
         let url = URL(string: "https://api.github.com/graphql")!
         
@@ -53,6 +52,13 @@ class MasterViewController: UITableViewController {
 
         let repo = repos![indexPath.row]
         cell.textLabel!.text = repo.node?.name
+        cell.detailTextLabel?.text = "\(repo.node!.projects.edges!.count) projects"
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let repo = repos![indexPath.row]
+        let projectController = ProjectsViewController(repo: repo)
+        show(projectController, sender: self)
     }
 }

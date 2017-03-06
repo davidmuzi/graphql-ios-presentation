@@ -11,6 +11,13 @@ public final class PublicReposQuery: GraphQLQuery {
     "      edges {" +
     "        node {" +
     "          name" +
+    "          projects(first: 100) {" +
+    "            edges {" +
+    "              node {" +
+    "                name" +
+    "              }" +
+    "            }" +
+    "          }" +
     "        }" +
     "      }" +
     "    }" +
@@ -55,9 +62,38 @@ public final class PublicReposQuery: GraphQLQuery {
           public struct Node: GraphQLMappable {
             public let __typename = "Repository"
             public let name: String
+            public let projects: Project
 
             public init(reader: GraphQLResultReader) throws {
               name = try reader.value(for: Field(responseName: "name"))
+              projects = try reader.value(for: Field(responseName: "projects", arguments: ["first": 100]))
+            }
+
+            public struct Project: GraphQLMappable {
+              public let __typename = "ProjectConnection"
+              public let edges: [Edge?]?
+
+              public init(reader: GraphQLResultReader) throws {
+                edges = try reader.optionalList(for: Field(responseName: "edges"))
+              }
+
+              public struct Edge: GraphQLMappable {
+                public let __typename = "ProjectEdge"
+                public let node: Node?
+
+                public init(reader: GraphQLResultReader) throws {
+                  node = try reader.optionalValue(for: Field(responseName: "node"))
+                }
+
+                public struct Node: GraphQLMappable {
+                  public let __typename = "Project"
+                  public let name: String
+
+                  public init(reader: GraphQLResultReader) throws {
+                    name = try reader.value(for: Field(responseName: "name"))
+                  }
+                }
+              }
             }
           }
         }

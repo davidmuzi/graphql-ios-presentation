@@ -9,20 +9,19 @@
 /* Begin PBXBuildFile section */
 		BEA8DD701E6CA8F6009096BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA8DD6F1E6CA8F6009096BD /* AppDelegate.swift */; };
 		BEA8DD721E6CA8F6009096BD /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA8DD711E6CA8F6009096BD /* MasterViewController.swift */; };
-		BEA8DD741E6CA8F6009096BD /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA8DD731E6CA8F6009096BD /* DetailViewController.swift */; };
 		BEA8DD771E6CA8F6009096BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEA8DD751E6CA8F6009096BD /* Main.storyboard */; };
 		BEA8DD791E6CA8F6009096BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEA8DD781E6CA8F6009096BD /* Assets.xcassets */; };
 		BEA8DD7C1E6CA8F6009096BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEA8DD7A1E6CA8F6009096BD /* LaunchScreen.storyboard */; };
 		BEA8DD841E6CA92C009096BD /* Apollo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEA8DD831E6CA92C009096BD /* Apollo.framework */; };
 		BEA8DD881E6CAA05009096BD /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA8DD871E6CAA05009096BD /* API.swift */; };
 		BEA8DD8C1E6CABCC009096BD /* repos.graphql in Resources */ = {isa = PBXBuildFile; fileRef = BEA8DD8B1E6CABCC009096BD /* repos.graphql */; };
+		BEA8DDAD1E6D977B009096BD /* ProjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA8DDAC1E6D977B009096BD /* ProjectsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		BEA8DD6C1E6CA8F6009096BD /* Projects.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Projects.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEA8DD6F1E6CA8F6009096BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BEA8DD711E6CA8F6009096BD /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
-		BEA8DD731E6CA8F6009096BD /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		BEA8DD761E6CA8F6009096BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BEA8DD781E6CA8F6009096BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BEA8DD7B1E6CA8F6009096BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -30,6 +29,7 @@
 		BEA8DD831E6CA92C009096BD /* Apollo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Apollo.framework; path = Carthage/Build/iOS/Apollo.framework; sourceTree = "<group>"; };
 		BEA8DD871E6CAA05009096BD /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = API.swift; path = Projects/API.swift; sourceTree = "<group>"; };
 		BEA8DD8B1E6CABCC009096BD /* repos.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = repos.graphql; sourceTree = "<group>"; };
+		BEA8DDAC1E6D977B009096BD /* ProjectsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,7 +67,7 @@
 				BEA8DD8A1E6CABB2009096BD /* Queries */,
 				BEA8DD6F1E6CA8F6009096BD /* AppDelegate.swift */,
 				BEA8DD711E6CA8F6009096BD /* MasterViewController.swift */,
-				BEA8DD731E6CA8F6009096BD /* DetailViewController.swift */,
+				BEA8DDAC1E6D977B009096BD /* ProjectsViewController.swift */,
 				BEA8DD751E6CA8F6009096BD /* Main.storyboard */,
 				BEA8DD781E6CA8F6009096BD /* Assets.xcassets */,
 				BEA8DD7A1E6CA8F6009096BD /* LaunchScreen.storyboard */,
@@ -200,7 +200,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BEA8DD741E6CA8F6009096BD /* DetailViewController.swift in Sources */,
+				BEA8DDAD1E6D977B009096BD /* ProjectsViewController.swift in Sources */,
 				BEA8DD721E6CA8F6009096BD /* MasterViewController.swift in Sources */,
 				BEA8DD881E6CAA05009096BD /* API.swift in Sources */,
 				BEA8DD701E6CA8F6009096BD /* AppDelegate.swift in Sources */,
@@ -373,6 +373,7 @@
 				BEA8DD821E6CA8F6009096BD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

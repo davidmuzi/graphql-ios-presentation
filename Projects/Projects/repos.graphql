@@ -5,8 +5,16 @@ query PublicRepos {
             edges {
                 node {
                     name
+                    projects(first: 100) {
+                        edges {
+                            node {
+                                name
+                            }
+                        }
+                    }
                 }
             }
         }
     }
 }
+
