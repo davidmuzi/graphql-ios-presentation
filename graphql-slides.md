@@ -175,3 +175,18 @@ ___
 
 ### iOS (and Android) Client
 http://dev.apollodata.com
+
+---
+
+## Resources
+
+https://github.com/davidmuzi/graphql-ios-presentation
+http://graphql.org/learn/
+http://dev.apollodata.com/ios/
+https://developer.github.com/early-access/graphql/explorer/
+
+---
+
+## Questions?
+
+# 🤔
