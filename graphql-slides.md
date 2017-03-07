@@ -133,6 +133,8 @@ Create and modify existing data
 
 ## Mutation
 
+mutation
+
 ```yaml
 mutation AddComment($input: AddCommentInput!) {
   addComment(input: $input) {
@@ -140,12 +142,13 @@ mutation AddComment($input: AddCommentInput!) {
   }
 }
 ```
+variables
 
 ```json
 {
   "input": {
-    "clientMutationId": "adsf",
-    "subjectId": "ds",
+    "clientMutationId": "asdlkfbao87sdt==",
+    "subjectId": "asdkjfasdf97asd==",
     "body": "A Comment"
   }
 }
@@ -168,9 +171,7 @@ ___
 
 # Apollo  
 
-![inline, 200%](/Users/davidmuzi/Desktop/apollo.png)
+![inline, 200%](apollo.png)
 
 ### iOS (and Android) Client
 http://dev.apollodata.com
-
----
