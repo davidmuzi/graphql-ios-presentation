@@ -2,8 +2,7 @@ mutation CreateNewProject($input: CreateProjectInput!) {
     createProject(input: $input) {
         clientMutationId
         project {
-            id
-            name
+            ...RepoProject
         }
     }
 }

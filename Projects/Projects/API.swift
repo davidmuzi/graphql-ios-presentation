@@ -29,11 +29,11 @@ public final class CreateNewProjectMutation: GraphQLMutation {
     "  createProject(input: $input) {" +
     "    clientMutationId" +
     "    project {" +
-    "      id" +
-    "      name" +
+    "      ...RepoProject" +
     "    }" +
     "  }" +
     "}"
+  public static let queryDocument = operationDefinition.appending(RepoProject.fragmentDefinition)
 
   public let input: CreateProjectInput
 
@@ -64,12 +64,16 @@ public final class CreateNewProjectMutation: GraphQLMutation {
 
       public struct Project: GraphQLMappable {
         public let __typename = "Project"
-        public let id: GraphQLID
-        public let name: String
+
+        public let fragments: Fragments
 
         public init(reader: GraphQLResultReader) throws {
-          id = try reader.value(for: Field(responseName: "id"))
-          name = try reader.value(for: Field(responseName: "name"))
+          let repoProject = try RepoProject(reader: reader)
+          fragments = Fragments(repoProject: repoProject)
+        }
+
+        public struct Fragments {
+          public let repoProject: RepoProject
         }
       }
     }
@@ -85,14 +89,14 @@ public final class ReposProjectsQuery: GraphQLQuery {
     "      projects(first: 10) {" +
     "        edges {" +
     "          node {" +
-    "            id" +
-    "            name" +
+    "            ...RepoProject" +
     "          }" +
     "        }" +
     "      }" +
     "    }" +
     "  }" +
     "}"
+  public static let queryDocument = operationDefinition.appending(RepoProject.fragmentDefinition)
 
   public let repo: String
 
@@ -147,12 +151,16 @@ public final class ReposProjectsQuery: GraphQLQuery {
 
             public struct Node: GraphQLMappable {
               public let __typename = "Project"
-              public let id: GraphQLID
-              public let name: String
+
+              public let fragments: Fragments
 
               public init(reader: GraphQLResultReader) throws {
-                id = try reader.value(for: Field(responseName: "id"))
-                name = try reader.value(for: Field(responseName: "name"))
+                let repoProject = try RepoProject(reader: reader)
+                fragments = Fragments(repoProject: repoProject)
+              }
+
+              public struct Fragments {
+                public let repoProject: RepoProject
               }
             }
           }
@@ -171,11 +179,12 @@ public final class PublicReposQuery: GraphQLQuery {
     "      edges {" +
     "        node {" +
     "          name" +
+    "          path" +
     "          id" +
     "          projects(first: 100) {" +
     "            edges {" +
     "              node {" +
-    "                name" +
+    "                ...RepoProject" +
     "              }" +
     "            }" +
     "          }" +
@@ -184,6 +193,7 @@ public final class PublicReposQuery: GraphQLQuery {
     "    }" +
     "  }" +
     "}"
+  public static let queryDocument = operationDefinition.appending(RepoProject.fragmentDefinition)
   public init() {
   }
 
@@ -223,11 +233,13 @@ public final class PublicReposQuery: GraphQLQuery {
           public struct Node: GraphQLMappable {
             public let __typename = "Repository"
             public let name: String
+            public let path: String
             public let id: GraphQLID
             public let projects: Project
 
             public init(reader: GraphQLResultReader) throws {
               name = try reader.value(for: Field(responseName: "name"))
+              path = try reader.value(for: Field(responseName: "path"))
               id = try reader.value(for: Field(responseName: "id"))
               projects = try reader.value(for: Field(responseName: "projects", arguments: ["first": 100]))
             }
@@ -250,10 +262,16 @@ public final class PublicReposQuery: GraphQLQuery {
 
                 public struct Node: GraphQLMappable {
                   public let __typename = "Project"
-                  public let name: String
+
+                  public let fragments: Fragments
 
                   public init(reader: GraphQLResultReader) throws {
-                    name = try reader.value(for: Field(responseName: "name"))
+                    let repoProject = try RepoProject(reader: reader)
+                    fragments = Fragments(repoProject: repoProject)
+                  }
+
+                  public struct Fragments {
+                    public let repoProject: RepoProject
                   }
                 }
               }
@@ -262,5 +280,21 @@ public final class PublicReposQuery: GraphQLQuery {
         }
       }
     }
+  }
+}
+
+public struct RepoProject: GraphQLNamedFragment {
+  public static let fragmentDefinition =
+    "fragment RepoProject on Project {" +
+    "  name" +
+    "}"
+
+  public static let possibleTypes = ["Project"]
+
+  public let __typename = "Project"
+  public let name: String
+
+  public init(reader: GraphQLResultReader) throws {
+    name = try reader.value(for: Field(responseName: "name"))
   }
 }

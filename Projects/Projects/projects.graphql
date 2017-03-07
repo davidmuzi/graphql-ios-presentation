@@ -5,8 +5,7 @@ query ReposProjects($repo:String!) {
             projects(first: 10) {
                 edges {
                     node {
-                        id
-                        name
+                        ...RepoProject
                     }
                 }
             }

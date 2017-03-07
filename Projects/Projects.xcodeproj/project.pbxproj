@@ -18,6 +18,7 @@
 		BEA8DDAD1E6D977B009096BD /* ProjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA8DDAC1E6D977B009096BD /* ProjectsViewController.swift */; };
 		BEA8DDDD1E6E252D009096BD /* projects.graphql in Resources */ = {isa = PBXBuildFile; fileRef = BEA8DDDC1E6E252D009096BD /* projects.graphql */; };
 		BEA8DDDF1E6E4745009096BD /* projectCreation.graphql in Resources */ = {isa = PBXBuildFile; fileRef = BEA8DDDE1E6E4745009096BD /* projectCreation.graphql */; };
+		BEE51E5E1E6F3DC3005C9DBD /* ProjectFragment.graphql in Resources */ = {isa = PBXBuildFile; fileRef = BEE51E5D1E6F3DC3005C9DBD /* ProjectFragment.graphql */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		BEA8DDAC1E6D977B009096BD /* ProjectsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsViewController.swift; sourceTree = "<group>"; };
 		BEA8DDDC1E6E252D009096BD /* projects.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = projects.graphql; sourceTree = "<group>"; };
 		BEA8DDDE1E6E4745009096BD /* projectCreation.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = projectCreation.graphql; sourceTree = "<group>"; };
+		BEE51E5D1E6F3DC3005C9DBD /* ProjectFragment.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ProjectFragment.graphql; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 				BEA8DD8B1E6CABCC009096BD /* repos.graphql */,
 				BEA8DDDC1E6E252D009096BD /* projects.graphql */,
 				BEA8DDDE1E6E4745009096BD /* projectCreation.graphql */,
+				BEE51E5D1E6F3DC3005C9DBD /* ProjectFragment.graphql */,
 			);
 			name = Queries;
 			sourceTree = "<group>";
@@ -162,6 +165,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BEA8DD7C1E6CA8F6009096BD /* LaunchScreen.storyboard in Resources */,
+				BEE51E5E1E6F3DC3005C9DBD /* ProjectFragment.graphql in Resources */,
 				BEA8DD791E6CA8F6009096BD /* Assets.xcassets in Resources */,
 				BEA8DD771E6CA8F6009096BD /* Main.storyboard in Resources */,
 				BEA8DDDD1E6E252D009096BD /* projects.graphql in Resources */,

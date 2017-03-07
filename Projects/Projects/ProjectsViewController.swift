@@ -14,7 +14,7 @@ class ProjectsViewController: UITableViewController {
     let repo: PublicReposQuery.Data.Viewer.Repository.Edge
     let apollo: ApolloClient
     
-    var projects: [ReposProjectsQuery.Data.Viewer.Repository.Project.Edge]? {
+    var projects: [RepoProject]? {
         didSet {
             tableView.reloadData()
         }
@@ -44,7 +44,7 @@ class ProjectsViewController: UITableViewController {
                 return
             }
             
-            self.projects = projects
+            self.projects = projects.map { $0.node!.fragments.repoProject }
         }
     }
     
@@ -62,11 +62,9 @@ class ProjectsViewController: UITableViewController {
             let mutation = CreateNewProjectMutation(input: input)
             self.apollo.perform(mutation: mutation) { result, error in
                 
-                guard let project = result?.data?.createProject?.project else { return }
-                
-                print("Created project: \(project.name)")
+                guard let project = result?.data?.createProject?.project.fragments.repoProject else { return }
+                self.projects?.append(project)
             }
-            
         }))
         
         present(alert, animated: true)
@@ -81,7 +79,7 @@ class ProjectsViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         let project = projects![indexPath.row]
         
-        cell.textLabel?.text = project.node?.name
+        cell.textLabel?.text = project.name
         
         return cell
     }

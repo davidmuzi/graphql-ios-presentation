@@ -5,11 +5,12 @@ query PublicRepos {
             edges {
                 node {
                     name
+                    path
                     id
                     projects(first: 100) {
                         edges {
                             node {
-                                name
+                                ...RepoProject
                             }
                         }
                     }
@@ -18,4 +19,3 @@ query PublicRepos {
         }
     }
 }
-
