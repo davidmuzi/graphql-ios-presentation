@@ -16,6 +16,14 @@
 
 ## GraphQL
 
+- Flexible
+- Precise
+- Type-safe
+- Documentation
+- Deprecation
+
+---
+
 ### Schema -> Query -> Response
 
 ---
