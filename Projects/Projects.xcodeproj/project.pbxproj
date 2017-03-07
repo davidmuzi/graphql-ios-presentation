@@ -17,6 +17,7 @@
 		BEA8DD8C1E6CABCC009096BD /* repos.graphql in Resources */ = {isa = PBXBuildFile; fileRef = BEA8DD8B1E6CABCC009096BD /* repos.graphql */; };
 		BEA8DDAD1E6D977B009096BD /* ProjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA8DDAC1E6D977B009096BD /* ProjectsViewController.swift */; };
 		BEA8DDDD1E6E252D009096BD /* projects.graphql in Resources */ = {isa = PBXBuildFile; fileRef = BEA8DDDC1E6E252D009096BD /* projects.graphql */; };
+		BEA8DDDF1E6E4745009096BD /* projectCreation.graphql in Resources */ = {isa = PBXBuildFile; fileRef = BEA8DDDE1E6E4745009096BD /* projectCreation.graphql */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		BEA8DD8B1E6CABCC009096BD /* repos.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = repos.graphql; sourceTree = "<group>"; };
 		BEA8DDAC1E6D977B009096BD /* ProjectsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsViewController.swift; sourceTree = "<group>"; };
 		BEA8DDDC1E6E252D009096BD /* projects.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = projects.graphql; sourceTree = "<group>"; };
+		BEA8DDDE1E6E4745009096BD /* projectCreation.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = projectCreation.graphql; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 			children = (
 				BEA8DD8B1E6CABCC009096BD /* repos.graphql */,
 				BEA8DDDC1E6E252D009096BD /* projects.graphql */,
+				BEA8DDDE1E6E4745009096BD /* projectCreation.graphql */,
 			);
 			name = Queries;
 			sourceTree = "<group>";
@@ -162,6 +165,7 @@
 				BEA8DD791E6CA8F6009096BD /* Assets.xcassets in Resources */,
 				BEA8DD771E6CA8F6009096BD /* Main.storyboard in Resources */,
 				BEA8DDDD1E6E252D009096BD /* projects.graphql in Resources */,
+				BEA8DDDF1E6E4745009096BD /* projectCreation.graphql in Resources */,
 				BEA8DD8C1E6CABCC009096BD /* repos.graphql in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

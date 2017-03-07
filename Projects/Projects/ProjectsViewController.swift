@@ -35,6 +35,9 @@ class ProjectsViewController: UITableViewController {
         title = repo.node!.name
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         
+        let button = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(add))
+        navigationItem.rightBarButtonItem = button
+        
         apollo.fetch(query: ReposProjectsQuery(repo: repo.node!.name)) { result, error in
             
             guard let projects = result?.data?.viewer.repository?.projects.edges as? [ReposProjectsQuery.Data.Viewer.Repository.Project.Edge] else {
@@ -43,6 +46,30 @@ class ProjectsViewController: UITableViewController {
             
             self.projects = projects
         }
+    }
+    
+    func add() {
+        
+        let alert = UIAlertController(title: "Create Project", message: nil, preferredStyle: .alert)
+        
+        alert.addTextField()
+        
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+            
+            let title = alert.textFields!.first!.text!
+            
+            let input = CreateProjectInput(ownerId: self.repo.node!.id, name: title)
+            let mutation = CreateNewProjectMutation(input: input)
+            self.apollo.perform(mutation: mutation) { result, error in
+                
+                guard let project = result?.data?.createProject?.project else { return }
+                
+                print("Created project: \(project.name)")
+            }
+            
+        }))
+        
+        present(alert, animated: true)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
