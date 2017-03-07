@@ -58,7 +58,7 @@ class MasterViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let repo = repos![indexPath.row]
-        let projectController = ProjectsViewController(repo: repo)
+        let projectController = ProjectsViewController(repo: repo, apollo: apollo)
         show(projectController, sender: self)
     }
 }

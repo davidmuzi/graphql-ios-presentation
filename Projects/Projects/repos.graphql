@@ -1,7 +1,7 @@
 query PublicRepos {
     viewer {
         login
-        repositories(first: 10, privacy: PUBLIC) {
+        repositories(first: 20, privacy: PUBLIC) {
             edges {
                 node {
                     name
