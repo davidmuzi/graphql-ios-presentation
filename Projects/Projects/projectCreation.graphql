@@ -1,0 +1,8 @@
+mutation CreateNewProject($input: CreateProjectInput!) {
+    createProject(input: $input) {
+        clientMutationId
+        project {
+            ...RepoProject
+        }
+    }
+}

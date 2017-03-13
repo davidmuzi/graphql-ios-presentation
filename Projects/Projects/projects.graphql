@@ -1,0 +1,14 @@
+query ReposProjects($repo:String!) {
+    viewer {
+        repository(name: $repo) {
+            id
+            projects(first: 10) {
+                edges {
+                    node {
+                        ...RepoProject
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+query PublicRepos {
+    viewer {
+        login
+        repositories(first: 20, privacy: PUBLIC) {
+            edges {
+                node {
+                    name
+                    path
+                    id
+                    projects(first: 100) {
+                        edges {
+                            node {
+                                ...RepoProject
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

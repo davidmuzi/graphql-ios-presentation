@@ -1,0 +1,3 @@
+fragment RepoProject on Project {
+    name
+}
